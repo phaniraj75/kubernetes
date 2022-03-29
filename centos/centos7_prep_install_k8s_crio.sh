@@ -42,7 +42,7 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cl
 exclude=kubelet kubeadm kubectl
 EOF
 
-yum update -y && yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+yum update -y && yum install -y kubelet=1.23.1 kubeadm=1.23.1 kubectl=1.23.1 --disableexcludes=kubernetes
 mkdir /var/lib/kubelet
 
 cat <<EOF > /var/lib/kubelet/config.yaml
