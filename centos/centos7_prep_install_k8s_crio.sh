@@ -37,12 +37,12 @@ name=Kubernetes
 baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
 enabled=1
 gpgcheck=1
-repo_gpgcheck=1
+repo_gpgcheck=0
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 exclude=kubelet kubeadm kubectl
 EOF
 
-yum update -y && yum install -y kubelet=1.23.1 kubeadm=1.23.1 kubectl=1.23.1 --disableexcludes=kubernetes
+yum update -y && yum install -y kubelet-1.23.1 kubeadm-1.23.1 kubectl-1.23.1 --disableexcludes=kubernetes
 mkdir /var/lib/kubelet
 
 cat <<EOF > /var/lib/kubelet/config.yaml
